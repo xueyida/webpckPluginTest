@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function webpackPlugin() {\n  console.log(11);\n}\n\nwebpackPlugin.prototype.apply = function (compiler) {\n  compiler.plugin('emit', function (compilation, callback) {\n    // 在生成文件中，创建一个头部字符串：\n    var filelist = 'In this build:\\n\\n'; // 遍历所有编译过的资源文件，\n    // 对于每个文件名称，都添加一行内容。\n\n    for (var filename in compilation.assets) {\n      filelist += '- ' + filename + '\\n';\n    } // 将这个列表作为一个新的文件资源，插入到 webpack 构建中：\n\n\n    compilation.assets['filelist.md'] = {\n      source: function source() {\n        return filelist;\n      },\n      size: function size() {\n        return filelist.length;\n      }\n    };\n    callback();\n  });\n};\n\nmodule.exports = webpackPlugin;\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function webpackPlugin() {\n  console.log(11);\n}\n\nwebpackPlugin.prototype.apply = function (compiler) {\n  compiler.plugin('emit', function (compilation, callback) {\n    // 在生成文件中，创建一个头部字符串：\n    var filelist = 'In this build:\\n\\n';\n    console.log(123); // 遍历所有编译过的资源文件，\n    // 对于每个文件名称，都添加一行内容。\n\n    for (var filename in compilation.assets) {\n      filelist += '- ' + filename + '\\n';\n    } // 将这个列表作为一个新的文件资源，插入到 webpack 构建中：\n\n\n    compilation.assets['filelist.md'] = {\n      source: function source() {\n        return filelist;\n      },\n      size: function size() {\n        return filelist.length;\n      }\n    };\n    callback();\n  });\n};\n\nmodule.exports = webpackPlugin;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
