@@ -4,10 +4,9 @@ function webpackPlugin(){
 
 webpackPlugin.prototype.apply = function(compiler){
 
-    compiler.plugin('emit', function(compilation, callback) {
+    compiler.hooks.emit.tapAsync('testPlugin', function(compilation, callback) {
         // 在生成文件中，创建一个头部字符串：
         var filelist = 'In this build:\n\n';
-        console.log(123)
         // 遍历所有编译过的资源文件，
         // 对于每个文件名称，都添加一行内容。
         for (var filename in compilation.assets) {
