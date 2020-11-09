@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/a.js":
+/*!******************!*\
+  !*** ./src/a.js ***!
+  \******************/
+/*! exports provided: g */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"g\", function() { return g; });\nvar g = 56789;\n\n//# sourceURL=webpack:///./src/a.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function webpackPlugin() {\n  console.log(11);\n}\n\nwebpackPlugin.prototype.apply = function (compiler) {\n  compiler.hooks.emit.tapAsync('testPlugin', function (compilation, callback) {\n    // 在生成文件中，创建一个头部字符串：\n    var filelist = 'In this build:\\n\\n'; // 遍历所有编译过的资源文件，\n    // 对于每个文件名称，都添加一行内容。\n\n    for (var filename in compilation.assets) {\n      filelist += '- ' + filename + '\\n';\n    } // 将这个列表作为一个新的文件资源，插入到 webpack 构建中：\n\n\n    compilation.assets['filelist.md'] = {\n      source: function source() {\n        return filelist;\n      },\n      size: function size() {\n        return filelist.length;\n      }\n    };\n    callback();\n  });\n};\n\nmodule.exports = webpackPlugin;\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a */ \"./src/a.js\");\n\nconsole.log(_a__WEBPACK_IMPORTED_MODULE_0__[\"g\"]);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

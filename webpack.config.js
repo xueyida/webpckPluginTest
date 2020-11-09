@@ -1,5 +1,5 @@
 const path = require('path');
-const webpackPluginTest = require('./src/index');
+const webpackPluginTest = require('./testplugin/index');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -28,6 +28,7 @@ module.exports = {
        new HtmlWebpackPlugin({
         filename: 'index.html', // 生成文件名
         template: path.join(process.cwd(), './index.html') // 模班文件
-       })
+       }),
+    //    "@babel/plugin-syntax-dynamic-import",
     ]
 }
